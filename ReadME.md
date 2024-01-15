@@ -44,8 +44,7 @@ grid_configs = {
     "multiplicity": 1, # molecule multiplicity
     "probe": "Li", # probe
     "probe_chrg": 1, # probe charge
-    "type": "xtb", result = tm.TurbomoleRunner.load_file(tmol_configs=configs)
-# electron density calculation method
+    "type": "xtb", # electron density calculation method
     "isovalue": 0.001, # electron density isovalue
     "spacing": 0.04, # grid spacing for grid generation
     "rad_val": 0.7, # probe radius
@@ -62,7 +61,7 @@ grid_configs = {
 # generate grid
 result = gd.Grid.load_file(configs=grid_configs)
 ```
-Most of the parameters are set to default values when users run the grid generation. Users can put the **limited keys and values** in the `grid_configs` dictionary to change the default values. The default values are listed above
+Most parameters are set to default values when users run the grid generation. Users can put the **limited keys and values** in the `grid_configs` dictionary to change the default values. The default values are listed above
 
 
 ### 2. Turbomole LMO-EDA surface generation
