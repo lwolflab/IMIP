@@ -61,7 +61,7 @@ grid_configs = {
 # generate grid
 result = gd.Grid.load_file(configs=grid_configs)
 ```
-Most parameters are set to default values when users run the grid generation. Users can put the **limited keys and values (Users only add the items they want to change. Typically, users' `configs` is much shorter than shown here)** in the `grid_configs` dictionary to change the default values. The default values are listed above
+Users can put the **limited keys and values (Users only add the items they want to change. Typically, users' `configs` is much shorter than shown here)** in the `grid_configs` dictionary to change the default values. The default values are listed above
 
 
 ### 2. Turbomole LMO-EDA surface generation
