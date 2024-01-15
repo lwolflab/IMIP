@@ -139,7 +139,29 @@ After the xTB-iff surface generation, the results will be saved in two files:
 
 
 
-### 4. Ovito Usage to visualize the generated surface
+### 4. Render the image of molecular structure and generated surface
+
+#### 4.1 Render the image of molecular structure using `Ovito Python API`
+```python
+import IMIP.vis_ovito as ov
+
+ovi_configs = {"molecule": f"{mol}"} # molecule xyz file
+mol = ov.Ovito.load_file(ovito_configs=ovi_configs)
+mol.vp.camera_dir = (0,0,1) # camera direction coordinates
+mol.vp.fov = fov # camera vertical field of view
+mol.render() # render the image
+```
+<p align="left">
+  <img src="model.png" alt="model" style="width: 50%;"/>
+  <img src="structure.jpg" alt="chemdraw" style="width: 30%;"/>
+</p>
+
+
+#### 4.2 Render the image of generated surface using `Ovito Python API`
+```python
+```
+
+### 5. Ovito Usage to visualize the generated surface
 
 For detailed usage of Ovito to visualize the extended xyz file, please refer to the documentation of Ovito for [XYZ file reader](https://www.ovito.org/manual/reference/file_formats/input/xyz.html) and [Construct surface mesh](https://www.ovito.org/manual_testing/reference/pipelines/modifiers/construct_surface_mesh.html#particles-modifiers-construct-surface-mesh).
 
