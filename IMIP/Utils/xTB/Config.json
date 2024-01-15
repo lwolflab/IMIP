@@ -1,0 +1,20 @@
+{
+    "molecule": "h2.xyz",
+    "chrg": 0,
+    "multiplicity": 1,
+    "probe": "Li",
+    "probe_chrg": 1,
+    "type": "xtb",
+    "isovalue": 0.001,
+    "spacing": 0.04,
+    "rad_val": 0.7,
+    "num_gridpoints": 10000,
+    "filtration": 0.3,
+    "tangent_radius": 0.5,
+    "tangent_max_nn": 40,
+    "redirection": true,
+    "range_ve": 1.05,
+    "range_redir": 0.0001,
+    "tight": false,
+    "gfn": 2
+}
