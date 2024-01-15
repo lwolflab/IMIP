@@ -1,7 +1,7 @@
-# Molecular interaction potential maps (IMIP) surface generrator
+# Molecular interaction potential maps (IMIP) surface generator
 
 ## Description
-This is a python script to generate IMIP surface from a given xyz file. The detailed information was described in the following paper:
+This Python script generates an IMIP surface from a given XYZ file. The detailed information is described in the following paper:
 
 **Amin Kiani**, **Wentong Zhou**, and **Lawrence M. Wolf** "Using molecular interaction potential maps derived from energy decomposition analysis to interpret electronic structure and reactivity. " 2023 In Manuscript.
 
@@ -16,7 +16,7 @@ This is a python script to generate IMIP surface from a given xyz file. The deta
 - Visualization: `ovito` python api
 - Other utilities:`tqdm`
 
-All Density Functional Theory(DFT) calculations are performed using `Turbomole` or `xTB/xTBiff` packages. For details, please refer to the official website of [Turbomole](http://www.turbomole.org/) and [xTB](https://xtb-docs.readthedocs.io/en/latest/).
+All Density Functional Theory(DFT) calculations use `Turbomole` or `xTB/xTBiff` packages. For details, please refer to the official websites of [Turbomole](http://www.turbomole.org/) and [xTB](https://xtb-docs.readthedocs.io/en/latest/).
 
 `Multiwfn(3.8dev)`  is used to calculate electron density values of generated grids after obtaining DFT-calculated wavefunctions. For details, please refer to the official website of [Multiwfn](http://sobereva.com/multiwfn/).
 
@@ -62,7 +62,7 @@ grid_configs = {
 # generate grid
 result = gd.Grid.load_file(configs=grid_configs)
 ```
-When users run the grid generation， most of the parameters are set to default values. Users can put the **limited keys and values** in the `grid_configs` dictionary to change the default values. The default values are listed above
+Most of the parameters are set to default values when users run the grid generation. Users can put the **limited keys and values** in the `grid_configs` dictionary to change the default values. The default values are listed above
 
 
 ### 2. Turbomole LMO-EDA surface generation
@@ -99,7 +99,7 @@ tmol_configs = {
 
 result = tm.TurbomoleRunner.load_file(tmol_configs=tmol_configs)
 ```
-When users run the Turbomole LMO-EDA surface generation， most of the parameters are set to default values and inherited from `Grid` parameters. Users can put the **limited keys and values** in the `tmol_configs` dictionary to change the default values. The default values are listed above.
+When users run the Turbomole LMO-EDA surface generation， most parameters are set to default values and inherited from `Grid` parameters. Users can put the **limited keys and values** in the `tmol_configs` dictionary to change the default values. The default values are listed above.
 
 After the Turbomole LMO-EDA surface generation, the results will be saved in two files:
 - `{mol_name}_turbomole.xyz`: extended xyz file containing the generated surface and the corresponding energy values
@@ -132,7 +132,7 @@ xtb_configs = {
 result = xtb.xTBRunner.load_file(xtb_configs=xtb_configs)
 
 ```
-When users run the xTB-iff surface generation， most of the parameters are set to default values and inherited from `Grid` parameters. Users can put the **limited keys and values** in the `xtb_configs` dictionary to change the default values. The default values are listed above.
+When users run the xTB-iff surface generation， most parameters are set to default values and inherited from `Grid` parameters. Users can put the **limited keys and values** in the `xtb_configs` dictionary to change the default values. The default values are listed above.
 
 After the xTB-iff surface generation, the results will be saved in two files:
 - `{mol_name}_xtb.xyz`: extended xyz file containing the generated surface and the corresponding energy values
@@ -149,10 +149,10 @@ For detailed usage of Ovito to visualize the extended xyz file, please refer to 
 
 
 ## To-do list
-- [x] Efficient grid generation and surface generation based on `Turbomole` and `xTB`.
-- [ ] Add automate visualization script.
+- [x] Efficient grid and surface generation based on `Turbomole` and `xTB`.
+- [ ] Add automated visualization script.
 - [ ] Add more QM packages to calculate different types of EDA energy values. (For example,`Orca` or `Gaussian`) 
-- [ ] GUI for users to set parameters and more paralellization of the code.
+- [ ] GUI for users to set parameters and more code parallelization.
 
 
 
