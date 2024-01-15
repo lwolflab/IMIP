@@ -98,7 +98,7 @@ tmol_configs = {
 
 result = tm.TurbomoleRunner.load_file(tmol_configs=tmol_configs)
 ```
-When users run the Turbomole LMO-EDA surface generation， most parameters are set to default values and inherited from `Grid` parameters. Users can put the **limited keys and values** in the `tmol_configs` dictionary to change the default values. The default values are listed above.
+When users run the Turbomole LMO-EDA surface generation， most parameters are set to default values and inherited from `Grid` parameters. Users can put the **limited keys and values (only change what you want to, so typically, `configs` is much shorter than what is shown here)** in the `tmol_configs` dictionary to change the default values. The default values are listed above.
 
 After the Turbomole LMO-EDA surface generation, the results will be saved in two files:
 - `{mol_name}_turbomole.xyz`: extended xyz file containing the generated surface and the corresponding energy values
