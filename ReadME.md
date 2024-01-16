@@ -203,7 +203,7 @@ If users want to visualize the generated surface with more customized parameters
 
 ## To-do list
 - [x] Efficient grid and surface generation based on `Turbomole` and `xTB`.
-- [ ] Add automated visualization script.
+- [x] Add automated visualization script.
 - [ ] Add more QM packages to calculate different types of EDA energy values. (For example,`Orca` or `Gaussian`) 
 - [ ] GUI for users to set parameters and more code parallelization.
 
