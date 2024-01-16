@@ -176,7 +176,7 @@ mol.vp.camera_dir = (0,0,1) # camera direction coordinates
 mol.vp.fov = fov # camera vertical field of view
 mol.render_grid() # render the image of generated surface
 ```
-**Unit**: **kcal/mol**
+**Unit**: **kcal/mol:**
 <p align="left">
   <img src="./images/acro_bf3.png" alt="model" style="width: 20%;"/>
   <img src="./images/acro_bf3_turbomole_Tot.png" alt="chemdraw1" style="width: 38%;"/>
