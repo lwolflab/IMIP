@@ -158,6 +158,9 @@ mol.render() # render the image
 
 
 #### 4.2 Render the image of generated surface using `Ovito Python API`
+Once the extended xyz file is generated, users can use `Ovito Python API` to render the image of generated surface.
+Run the following code to render the image of generated surface. Put the molecule and extended `xyz` file in the same directory
+
 ```python
 ovi_configs = { "molecule": "h2.xyz", # molecule xyz file
                 "grid_type": "xtb", # grid energy value source, for now: xtb or turbomole
