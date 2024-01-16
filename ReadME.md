@@ -187,7 +187,17 @@ mol.render_grid() # render the image of generated surface
 
 For detailed usage of Ovito to visualize the extended xyz file, please refer to the documentation of Ovito for [XYZ file reader](https://www.ovito.org/manual/reference/file_formats/input/xyz.html) and [Construct surface mesh](https://www.ovito.org/manual_testing/reference/pipelines/modifiers/construct_surface_mesh.html#particles-modifiers-construct-surface-mesh).
 
+**Unit**: **kcal/mol**
 
+If users want to visualize the generated surface with more customized parameters, please use `Ovito Pro` software. Below are some examples:
+
+<p align="center">
+  <img src="./images/full.png" alt="full" style="800"/>
+</p>
+
+<p align="center">
+  <img src="./images/stack.png" alt="full" style="800"/>
+</p>
 
 
 
