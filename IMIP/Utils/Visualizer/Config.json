@@ -17,7 +17,7 @@
   "range_redir": 0.0001,
   "tight": false,
   "grid_type": "turbomole",
-  "grid_term": "Total Energy",
+  "grid_term": "Tot",
   "grid_surface": true,
   "grid_r_scale": 1,
   "grid_l_scale": 1

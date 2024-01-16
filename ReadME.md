@@ -6,14 +6,14 @@ This Python script generates an IMIP surface from a given XYZ file. The detailed
 **Amin Kiani**, **Wentong Zhou**, and **Lawrence M. Wolf** "Using molecular interaction potential maps derived from energy decomposition analysis to interpret electronic structure and reactivity. " 2023 In Manuscript.
 
 <div align="center">
-<img src="Picture1.png" alt="Introduction" width="600">
+<img src="./images/Picture1.png" alt="Introduction" width="600">
 </div>
 
 ## Dependencies
 - Tested on `Python 3.10.0`
 - Grid generations and operations: `numpy`, `scipy`, `pandas`, `scikit-learn`,`open3d`
 - Quantum chemistry calculations: `turbomoleio`,`ase`,`pyscf`,`xtb-python`
-- Visualization: `ovito` python api
+- Visualization: `ovito`
 - Other utilities:`tqdm`
 
 All Density Functional Theory(DFT) calculations use `Turbomole` or `xTB/xTBiff` packages. For details, please refer to the official websites of [Turbomole](http://www.turbomole.org/) and [xTB](https://xtb-docs.readthedocs.io/en/latest/).
@@ -24,7 +24,7 @@ Surface Visualization is performed using `Ovito Pro`. For details, please refer 
 
 ### Installation
 - Install `Turbomole` and/or `xTB` packages.
-- Install `Ovito Pro` and `Ovito` python api.
+- Install `Ovito Pro` and `Ovito python api`.
 - Install `Multiwfn(3.8dev)`.
 - Install `numpy`, `scipy`, `pandas`, `scikit-learn`,`open3d`,`tqdm`,`ase`,`pyscf`,`xtb-python` using `pip` or `conda`.
 ```bash
@@ -145,21 +145,39 @@ After the xTB-iff surface generation, the results will be saved in two files:
 ```python
 import IMIP.vis_ovito as ov
 
-ovi_configs = {"molecule": f"{mol}"} # molecule xyz file
+ovi_configs = {"molecule":'h2.xyz'} # molecule xyz file
 mol = ov.Ovito.load_file(ovito_configs=ovi_configs)
 mol.vp.camera_dir = (0,0,1) # camera direction coordinates
 mol.vp.fov = fov # camera vertical field of view
 mol.render() # render the image
 ```
 <p align="left">
-  <img src="model.png" alt="model" style="width: 50%;"/>
-  <img src="structure.jpg" alt="chemdraw" style="width: 30%;"/>
+  <img src="./images/model.png" alt="model" style="width: 50%;"/>
+  <img src="./images/structure.jpg" alt="chemdraw" style="width: 30%;"/>
 </p>
 
 
 #### 4.2 Render the image of generated surface using `Ovito Python API`
 ```python
+ovi_configs = { "molecule": "h2.xyz", # molecule xyz file
+                "grid_type": "xtb", # grid energy value source, for now: xtb or turbomole
+                # EDA energy terms: Tot, Orb, Electro. 
+                # For details, please refer to ovito_grid_header in Utils/variables.py.
+                "grid_term": "Orb", 
+                "grid_surface": False, # whether to generate surface
+                "grid_r_scale": 1, # energy value scale right bound coefficient
+                "grid_l_scale": 1  # energy value scale left bound coefficient
+              }     
+mol = ov.Ovito.load_file(ovito_configs=ovi_configs)
+mol.vp.camera_dir = (0,0,1) # camera direction coordinates
+mol.vp.fov = fov # camera vertical field of view
+mol.render_grid() # render the image of generated surface
 ```
+<p align="left">
+  <img src="./images/acro_bf3.png" alt="model" style="width: 20%;"/>
+  <img src="./images/acro_bf3_turbomole_Tot.png" alt="chemdraw1" style="width: 38%;"/>
+  <img src="./images/acro_bf3_turbomole_Orb.png" alt="chemdraw2" style="width: 38%;"/>
+</p>
 
 ### 5. Ovito Usage to visualize the generated surface
 
