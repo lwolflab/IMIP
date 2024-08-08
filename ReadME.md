@@ -218,8 +218,9 @@ If you use this code, please cite the following paper:
 ```
 
 
-## Authors
+## Author
 - Wentong Zhou
+## Coauthor
 - Amin Kiani 
 
 ## Contributors
