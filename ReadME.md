@@ -220,6 +220,7 @@ If you use this code, please cite the following paper:
 
 ## Author
 - Wentong Zhou
+- Amin Kiani 
 
 ## Contributors
 - Wentong Zhou
