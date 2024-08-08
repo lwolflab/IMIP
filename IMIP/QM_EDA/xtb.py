@@ -18,6 +18,7 @@ class xTBRunner(Grid):
     gfn: int = 2
     '''
     Author: Wentong Zhou
+    Coauthor: Amin Kiani
 
     A class to run xTB-IFF calulations and extract the grid data from the output file.
     For detailed information about xTB abd xTB-IFF, please refer to xTB documentation.
