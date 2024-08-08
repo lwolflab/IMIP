@@ -22,6 +22,7 @@ from tqdm import tqdm
 class Grid:
     '''
     Author: Wentong Zhou
+    Coauthor: Amin Kiani
 
     This class is used to generate a grid for a given molecule.
 
