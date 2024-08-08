@@ -23,6 +23,7 @@ from tqdm import tqdm
 class TurbomoleRunner(Grid):
     """
     Author: Wentong Zhou
+    Coauthor: Amin Kiani
 
     A class to run Turbomole LMO-EDA calulations and extract the grid data from the output file.
     For detailed information about Turbomole, please refer to Turbomole documentation.
